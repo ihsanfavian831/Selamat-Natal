@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Natal 2025 | Last Christmas by Wham!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a3d2e 0%, #1a5c3e 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .snowflakes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: snowfall linear infinite;
+        }
+        
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-10px) translateX(0px);
+            }
+            100% {
+                transform: translateY(100vh) translateX(20px);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            color: #ffd700;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .card-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title i {
+            font-size: 1.8rem;
+        }
+        
+        .greeting {
+            line-height: 1.8;
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+        
+        .music-player {
+            text-align: center;
+        }
+        
+        .album-cover {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 5px solid #ffd700;
+            position: relative;
+        }
+        
+        .album-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .album-cover::after {
+            content: '♫ NOW PLAYING';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 215, 0, 0.9);
+            color: #0a3d2e;
+            font-weight: bold;
+            padding: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .song-info {
+            margin-bottom: 25px;
+        }
+        
+        .song-title {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+        
+        .artist {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .control-btn {
+            background: #ffd700;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            color: #0a3d2e;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .control-btn:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        
+        .progress-container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            height: 8px;
+            border-radius: 10px;
+            margin: 25px 0;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: #ffd700;
+            width: 0%;
+            border-radius: 10px;
+            transition: width 0.1s linear;
+        }
+        
+        .time-display {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .volume-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .volume-control i {
+            font-size: 1.2rem;
+            color: #ffd700;
+        }
+        
+        input[type="range"] {
+            width: 150px;
+            height: 6px;
+            -webkit-appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #ffd700;
+            cursor: pointer;
+        }
+        
+        .lyrics {
+            margin-top: 25px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .lyrics p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .lyrics .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .streaming-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .stream-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .stream-btn:hover {
+            background: rgba(255, 215, 0, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer i {
+            color: #ff0000;
+            margin: 0 5px;
+        }
+        
+        .christmas-decoration {
+            position: absolute;
+            font-size: 2rem;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .card-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Salju animasi -->
+    <div class="snowflakes" id="snowflakes"></div>
+    
+    <!-- Dekorasi Natal -->
+    <div class="christmas-decoration" style="top: 10%; left: 5%;">🎄</div>
+    <div class="christmas-decoration" style="top: 5%; right: 10%;">🎅</div>
+    <div class="christmas-decoration" style="bottom: 15%; left: 7%;">🦌</div>
+    <div class="christmas-decoration" style="bottom: 10%; right: 8%;">❄️</div>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">Selamat Hari Natal 2025</h1>
+            <p class="subtitle">Semoga damai, sukacita, dan cinta Natal memenuhi hatimu dan keluargamu</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="card">
+                <h2 class="card-title"><i class="fas fa-tree"></i> Ucapan Natal</h2>
+                <div class="greeting">
+                    <p>Di hari yang penuh sukacita ini, mari kita renungkan makna Natal yang sebenarnya. Natal adalah waktu untuk berbagi kasih, memberikan pengampunan, dan menyebarkan kebaikan kepada sesama.</p>
+                    <br>
+                    <p>Semoga di hari Natal ini, kita semua dikelilingi oleh orang-orang tercinta, penuh dengan tawa bahagia, dan diberikan kesehatan yang melimpah. Mari kita sambut tahun baru dengan harapan dan semangat baru.</p>
+                    <br>
+                    <p>Dari lubuk hati yang terdalam, saya mengucapkan <strong>Selamat Hari Natal</strong> untukmu dan keluargamu. Semoga Tuhan memberkati kita semua.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="music-player">
+                    <h2 class="card-title"><i class="fas fa-music"></i> Last Christmas</h2>
+                    <div class="album-cover">
+                        <img src="https://i.scdn.co/image/ab67616d0000b273f2d2adaa21ad616df6241e7d" alt="Wham! Last Christmas Album Cover">
+                    </div>
+                    <div class="song-info">
+                        <h3 class="song-title">Last Christmas</h3>
+                        <p class="artist">Wham! • 1984</p>
+                    </div>
+                    
+                    <div class="player-controls">
+                        <button class="control-btn" id="prevBtn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-btn" id="playPauseBtn">
+                            <i class="fas fa-play" id="playIcon"></i>
+                        </button>
+                        <button class="control-btn" id="nextBtn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                    
+                    <div class="volume-control">
+                        <i class="fas fa-volume-down"></i>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="70">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    
+                    <!-- Streaming Links -->
+                    <div class="streaming-links">
+                        <a href="https://open.spotify.com/track/2FRnf9qhLbvw8fu4IBXx78" target="_blank" class="stream-btn">
+                            <i class="fab fa-spotify"></i> Spotify
+                        </a>
+                        <a href="https://youtu.be/E8gmARGvPlI" target="_blank" class="stream-btn">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="https://music.apple.com/id/song/last-christmas/1440933467" target="_blank" class="stream-btn">
+                            <i class="fab fa-apple"></i> Apple Music
+                        </a>
+                    </div>
+                    
+                    <div class="lyrics">
+                        <h3 style="margin-bottom: 15px; color: #ffd700;">Lirik Last Christmas</h3>
+                        <p><span class="highlight">Last Christmas, I gave you my heart</span></p>
+                        <p>But the very next day, you gave it away</p>
+                        <p>This year, to save me from tears</p>
+                        <p>I'll give it to someone special</p>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>Dibuat untuk merayakan Hari Natal 2025</p>
+            <p>© 2025 - Selamat Natal & Tahun Baru | Lagu: Last Christmas - Wham!</p>
+        </footer>
+    </div>
+    
+    <!-- Audio untuk lagu Last Christmas -->
+    <audio id="christmasSong">
+        <!-- GANTI DENGAN LINK MP3 KAMU -->
+        <source src="Wham! - Last Christmas (Official Video).mp3" type="audio/mpeg">
+    </audio>
+    
+    <script>
+        // Elemen DOM
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playIcon = document.getElementById('playIcon');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const christmasSong = document.getElementById('christmasSong');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const snowflakesContainer = document.getElementById('snowflakes');
+        
+        // Status pemutaran lagu
+        let isPlaying = false;
+        
+        // Fungsi untuk membuat efek salju
+        function createSnowflakes() {
+            const snowflakeCount = 100;
+            
+            for (let i = 0; i < snowflakeCount; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                
+                // Ukuran acak
+                const size = Math.random() * 5 + 3;
+                snowflake.style.width = `${size}px`;
+                snowflake.style.height = `${size}px`;
+                
+                // Posisi awal acak
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                
+                // Animasi dengan durasi acak
+                const duration = Math.random() * 10 + 10;
+                snowflake.style.animationDuration = `${duration}s`;
+                
+                // Delay animasi acak
+                const delay = Math.random() * 10;
+                snowflake.style.animationDelay = `${delay}s`;
+                
+                snowflakesContainer.appendChild(snowflake);
+            }
+        }
+        
+        // Format waktu (detik ke menit:detik)
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+        
+        // Update progress bar
+        function updateProgress(e) {
+            if (isPlaying) {
+                const { duration, currentTime } = e.srcElement;
+                const progressPercent = (currentTime / duration) * 100;
+                progressBar.style.width = `${progressPercent}%`;
+                
+                // Update waktu
+                currentTimeEl.textContent = formatTime(currentTime);
+                
+                if (!durationEl.textContent || durationEl.textContent === '0:00') {
+                    durationEl.textContent = formatTime(duration);
+                }
+            }
+        }
+        
+        // Set progress bar ketika diklik
+        function setProgress(e) {
+            const width = this.clientWidth;
+            const clickX = e.offsetX;
+            const duration = christmasSong.duration;
+            
+            christmasSong.currentTime = (clickX / width) * duration;
+        }
+        
+        // Fungsi untuk memutar/menjeda lagu
+        function togglePlayPause() {
+            if (isPlaying) {
+                christmasSong.pause();
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            } else {
+                christmasSong.play();
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        }
+        
+        // Fungsi untuk mengatur volume
+        function setVolume() {
+            christmasSong.volume = volumeSlider.value / 100;
+        }
+        
+        // Event listeners
+        playPauseBtn.addEventListener('click', togglePlayPause);
+        volumeSlider.addEventListener('input', setVolume);
+        christmasSong.addEventListener('timeupdate', updateProgress);
+        christmasSong.addEventListener('ended', () => {
+            isPlaying = false;
+            playIcon.classList.remove('fa-pause');
+            playIcon.classList.add('fa-play');
+            progressBar.style.width = '0%';
+            currentTimeEl.textContent = '0:00';
+        });
+        progressContainer.addEventListener('click', setProgress);
+        
+        // Tombol prev dan next (simulasi)
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            christmasSong.currentTime = 0;
+            if (!isPlaying) {
+                togglePlayPause();
+            }
+        });
+        
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            // Untuk demo, kita reset lagu (seolah-olah lagu berikutnya)
+            christmasSong.currentTime = christmasSong.duration - 10; // Lompat ke 10 detik terakhir
+            if (!isPlaying) {
+                togglePlayPause();
+            }
+        });
+        
+        // Mulai lagu otomatis saat halaman dimuat
+        window.addEventListener('load', () => {
+            // Membuat efek salju
+            createSnowflakes();
+            
+            // Set volume awal
+            christmasSong.volume = 0.7;
+            volumeSlider.value = 70;
+            
+            // Mulai lagu otomatis setelah halaman dimuat
+            setTimeout(() => {
+                togglePlayPause();
+                
+                // Animasi kecil untuk tombol play
+                playPauseBtn.style.transform = "scale(1.1)";
+                setTimeout(() => {
+                    playPauseBtn.style.transform = "scale(1)";
+                }, 200);
+                
+                // Update duration
+                christmasSong.addEventListener('loadedmetadata', () => {
+                    durationEl.textContent = formatTime(christmasSong.duration);
+                });
+            }, 1500);
+        });
+        
+        // Efek visual saat hover di card
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Jika sumber audio pertama gagal, coba yang lain
+        christmasSong.addEventListener('error', function() {
+            console.log('Sumber audio pertama gagal, mencoba sumber alternatif...');
+            // Browser akan otomatis mencoba sumber berikutnya di tag <source>
+        });
+    </script>
+</body>
+</html>
